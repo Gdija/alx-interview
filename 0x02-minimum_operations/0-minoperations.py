@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+0. Minimum Operations
+"""
 def minOperations(n):
     """function to return the minimum operations of copy and paste"""
     if n == 1:
