@@ -10,18 +10,25 @@ function getMovieChar(movieId) {
 		}
 		const jsonData = JSON.parse(body);
 		const characters = jsonData.characters;
+		let index = 0;
 
-		characters.forEach((characterUrl) => {
+		function charById(index) {
+			if (index >= characters.length){
+				return;
+			}
+			const characterUrl = characters[index];
 			request(characterUrl, (charError, charResponse, charBody) => {
-				if(charError) {
-					console.error('Error:',charError);
-					return;
+				if (charError) {
+					console.error('Error:', charError);
+				} else {
+					const charData = JSON.parse(charBody);
+					console.log(`${charData.name}`);
+					charById(index + 1);
 				}
-				const charData = JSON.parse(charBody);
-				console.log(`${charData.name}`);
 			});
-		});
-});
+		}
+		charById(index)
+	});
 }
 const movieId = process.argv[2];
 getMovieChar(movieId);
