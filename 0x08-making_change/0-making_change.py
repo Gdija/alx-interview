@@ -9,3 +9,4 @@ def makeChange(coins, total):
         return 0
     else if (!total):
         return -1
+
