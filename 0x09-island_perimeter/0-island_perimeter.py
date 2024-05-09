@@ -3,3 +3,6 @@
 
 
 def island_perimeter(grid):
+    """grid is a list of list of integers
+    0 represents water
+    1 represents land"""
