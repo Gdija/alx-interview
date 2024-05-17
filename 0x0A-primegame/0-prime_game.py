@@ -4,6 +4,11 @@
 
 def isWinner(x, nums):
 
-    """ winner function based on number of rounds and array of n """
+    """
+    x is the number of rounds and nums is an array of n
+    Return: name of the player that won the most rounds
+    If the winner cannot be determined, return None
+    You can assume n and x will not be larger than 10000
+    """
     while(x <= len(nums)):
         for n in range(n+1):
